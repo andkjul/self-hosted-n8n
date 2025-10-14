@@ -1,0 +1,8 @@
+# Force Railway to build using the Dockerfile in repo root
+[build]
+builder = "DOCKERFILE"
+dockerfilePath = "Dockerfile"   # relative to repo root
+
+# (opsional) kalau kamu mau override start command dari sini, bisa:
+# [deploy]
+# startCommand = "sh -lc 'export N8N_PORT=\"${PORT:-5678}\"; n8n start'"
