@@ -1,8 +1,9 @@
-# Dockerfile (tanpa shell)
-FROM n8nio/n8n:latest
+# Dockerfile
+FROM n8nio/n8n:1.74.1    # pakai tag stabil
 
-# Pastikan bind ke semua interface
+# Bind ke semua interface
 ENV N8N_HOST=0.0.0.0
 
-# Jalankan n8n langsung (tanpa /bin/sh)
-CMD ["n8n", "start"]
+# Pastikan proses yang dijalankan adalah `n8n start`
+ENTRYPOINT ["tini","--","n8n"]
+CMD ["start"]
