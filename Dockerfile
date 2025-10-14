@@ -1,5 +1,8 @@
-# Run n8n and bind to the port Railway provides
+# Dockerfile (tanpa shell)
 FROM n8nio/n8n:latest
+
+# Pastikan bind ke semua interface
 ENV N8N_HOST=0.0.0.0
-# Use PORT from Railway; fallback 5678 for local
-CMD sh -lc 'export N8N_PORT="${PORT:-5678}" && exec n8n start'
+
+# Jalankan n8n langsung (tanpa /bin/sh)
+CMD ["n8n", "start"]
