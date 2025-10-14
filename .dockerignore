@@ -1,0 +1,6 @@
+.git
+node_modules
+assets
+docker-compose.yml
+**/*.log
+fly.toml
