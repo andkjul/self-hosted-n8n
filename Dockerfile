@@ -1,6 +1,7 @@
 FROM n8nio/n8n:1.74.1
 
-ENV N8N_HOST=0.0.0.0
+# (opsional) expose port
+EXPOSE 5678
 
-ENTRYPOINT ["tini", "--", "n8n"]
-CMD ["start"]
+# (opsional) kalau pakai environment variable di Railway, biarkan default CMD aja
+CMD ["n8n", "start"]
